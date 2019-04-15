@@ -1,15 +1,15 @@
 package com.grunde.burke;
 
 import java.util.LinkedList;
-import java.awt.Graphics;
+import java.awt.*;
 
 public class Handler {
 
-    LinkedList<GameObject> object = new LinkedList<GameObject>();
+    LinkedList<Country> object = new LinkedList<Country>();
 
     public void tick() {
         for(int i = 0; i < object.size(); i++) {
-            GameObject tempObject = object.get(i);
+            Country tempObject = object.get(i);
 
             tempObject.tick();
         }
@@ -17,18 +17,17 @@ public class Handler {
 
     public void render(Graphics g) {
         for(int i = 0; i < object.size(); i++) {
-            GameObject tempObject = object.get(i);
+            Country tempObject = object.get(i);
 
             tempObject.render(g);
         }
     }
 
-    public void addObject(GameObject object) {
+    public void addObject(Country object) {
         this.object.add(object);
     }
 
-    public void removeObject(GameObject object) {
+    public void removeObject(Country object) {
         this.object.remove(object);
     }
-
 }

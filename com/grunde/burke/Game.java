@@ -13,6 +13,8 @@ public class Game extends Canvas implements Runnable {
     public Game() {
         new Window(WIDTH, HEIGHT, "STILL WAITING, LET'S GO!", this);
         handler = new Handler();
+
+        handler.addObject(new Britan(1, 3, 2, 2, 3, ID.Britan));
     }
 
     public synchronized void start() {
@@ -62,7 +64,7 @@ public class Game extends Canvas implements Runnable {
     }
 
     private void tick() {
-
+        handler.tick();
     }
 
     private void render() {
